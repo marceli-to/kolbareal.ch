@@ -32,12 +32,54 @@ class WeeklyRegistrationsExport extends Notification
     {
         $period = $this->periodStart->format('d.m.Y').' – '.$this->periodEnd->format('d.m.Y');
 
-        return (new MailMessage)
+        $mail = (new MailMessage)
             ->subject('Kolbareal – Neue Anmeldungen ('.$period.')')
             ->markdown('mail.registrations-export', [
                 'registrations' => $this->registrations,
                 'period' => $period,
             ]);
+
+        if ($this->registrations->isNotEmpty()) {
+            $filename = 'anmeldungen-'.$this->periodStart->format('Y-m-d').'-'.$this->periodEnd->format('Y-m-d').'.csv';
+
+            $mail->attachData($this->buildCsv(), $filename, [
+                'mime' => 'text/csv',
+            ]);
+        }
+
+        return $mail;
+    }
+
+    /**
+     * Build a UTF-8 CSV (with BOM for Excel) of the registrations.
+     */
+    private function buildCsv(): string
+    {
+        $handle = fopen('php://temp', 'r+');
+
+        // BOM so Excel reads umlauts correctly.
+        fwrite($handle, "\xEF\xBB\xBF");
+
+        fputcsv($handle, ['Datum', 'Vorname', 'Name', 'Strasse', 'PLZ/Ort', 'E-Mail', 'Telefon', 'Wohnungsgrösse'], ';', '"', '');
+
+        foreach ($this->registrations as $registration) {
+            fputcsv($handle, [
+                $registration->created_at->format('d.m.Y'),
+                $registration->first_name,
+                $registration->last_name,
+                $registration->street,
+                $registration->zip_city,
+                $registration->email,
+                $registration->phone,
+                collect($registration->apartment_sizes)->map(fn ($s) => $s.'-Zi.')->implode(', '),
+            ], ';', '"', '');
+        }
+
+        rewind($handle);
+        $csv = stream_get_contents($handle);
+        fclose($handle);
+
+        return $csv;
     }
 
     /**
