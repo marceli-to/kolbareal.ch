@@ -1,4 +1,4 @@
-<footer {{ $attributes->merge(['class' => 'mx-auto w-full max-w-6xl px-24 py-24 md:py-48']) }}>
+<footer {{ $attributes->merge(['class' => 'mx-auto w-full max-w-6xl px-24 py-32 md:py-64']) }}>
 	<div class="flex flex-col gap-20 md:grid gap-y-32 md:grid-cols-12">
 
     <div class="flex flex-col md:flex-row md:items-end gap-20 md:gap-x-32 lg:gap-x-72 md:col-span-9">

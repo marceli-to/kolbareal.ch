@@ -8,11 +8,11 @@
 			<h1 class="text-balance text-2xl md:text-3xl font-bold tracking-tight uppercase">
 				Kolb Areal – Mein Zuhause
 			</h1>
-			<h2 class="text-xl md:text-2xl font-bold tracking-tight uppercase mb-16 md:mb-20">
+			<h2 class="text-xl md:text-2xl font-bold tracking-tight uppercase mb-20 md:mb-24">
 				Erstbezug ab Frühling 2027
 			</h2>
 
-			<div class="space-y-18 text-sm md:text-lg text-pretty max-w-prose">
+			<div class="space-y-20 text-sm md:text-lg text-pretty max-w-prose">
 				<p>
 					An der Alte Mühlackerstrasse in Zürich-Affoltern entstehen 29 moderne und
 					grosszügig konzipierte Mietwohnungen mit 1.5 bis 5.5 Zimmern. Die hochwertigen

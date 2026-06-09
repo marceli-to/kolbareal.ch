@@ -100,34 +100,34 @@ new class extends Component
 <div class="mx-auto w-full max-w-6xl px-24 py-32 md:py-64">
 	@if ($submitted)
 		<div
-			class="flex flex-col items-center gap-16 py-24 text-center text-white"
+			class="flex flex-col gap-24 text-white"
 			role="status"
-			aria-live="polite"
-		>
-			<svg class="size-56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-				<circle cx="12" cy="12" r="10" />
-				<path d="m8 12 3 3 5-6" stroke-linecap="round" stroke-linejoin="round" />
-			</svg>
-			<p class="text-xl font-bold">Wir haben Ihre Anmeldung erhalten</p>
-			<p class="max-w-[46ch] text-pretty text-sm text-white/80">
+			aria-live="polite">
+			<h2 class="text-xl md:text-2xl font-bold uppercase tracking-tight text-white">
+				Wir haben Ihre Anmeldung erhalten
+			</h2>
+			<p class="text-pretty text-sm text-white">
 				Vielen Dank für Ihr Interesse. Wir melden uns, sobald die Vermietung startet.
 			</p>
 		</div>
 	@else
-		<h2 class="text-xl md:text-2xl font-bold uppercase tracking-tight text-white">Kontaktformular</h2>
+		<h2 class="text-xl md:text-2xl font-bold uppercase tracking-tight text-white">
+      Kontaktformular
+    </h2>
 
 		<form wire:submit="submit" class="mt-16 flex flex-col gap-24">
 			{{-- Apartment size selection --}}
 			<fieldset>
-				<legend class="mb-16 text-lg md:text-xl font-bold text-white">Wohnungsgrösse auswählen</legend>
+				<legend class="mb-16 text-lg md:text-xl font-bold text-white">
+          Wohnungsgrösse auswählen
+        </legend>
 				<div
 					x-data
 					x-on:change="$el.querySelectorAll('input').forEach((c) => c.classList.remove('outline-2', '-outline-offset-2', 'outline-red-400'))"
-					class="grid grid-cols-1 gap-x-40 gap-y-12 sm:grid-flow-col sm:grid-cols-2 sm:grid-rows-3 max-w-2xl"
-				>
+					class="grid grid-cols-1 gap-x-40 gap-y-12 sm:grid-flow-col sm:grid-cols-2 sm:grid-rows-3 max-w-2xl">
 					@foreach ($sizes as $size)
 						<label for="size-{{ \Illuminate\Support\Str::slug($size) }}" class="flex cursor-pointer items-center gap-12 text-xs md:text-sm text-white">
-							<span class="group inline-grid size-20 grid-cols-1 sm:size-18">
+							<span class="group inline-grid size-20 grid-cols-1 sm:size-16">
 								<input
 									id="size-{{ \Illuminate\Support\Str::slug($size) }}"
 									type="checkbox"
@@ -136,8 +136,7 @@ new class extends Component
 									@class([
 										'col-start-1 row-start-1 appearance-none rounded-none border-0 bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white forced-colors:appearance-auto',
 										'outline-2 -outline-offset-2 outline-red-400' => $errors->has('apartment_sizes'),
-									])
-								>
+									])>
 								<svg viewBox="0 0 14 14" fill="none" class="pointer-events-none col-start-1 row-start-1 size-7/8 self-center justify-self-center stroke-ink">
 									<path d="M3 8L6 11L11 3.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-not-has-checked:opacity-0" />
 								</svg>
@@ -169,7 +168,7 @@ new class extends Component
 			{{-- Privacy consent --}}
 			<label for="privacy" x-data class="flex cursor-pointer items-start gap-12 text-xs md:text-sm text-white">
 				<span class="flex h-lh items-center text-sm">
-					<span class="group inline-grid size-20 grid-cols-1 sm:size-18">
+					<span class="group inline-grid size-20 grid-cols-1 sm:size-16">
 						<input
 							id="privacy"
 							type="checkbox"
@@ -196,7 +195,7 @@ new class extends Component
 				<p class="text-xs md:text-sm text-white underline">{{ $message }}</p>
 			@enderror
 
-			<div class="pt-4">
+			<div>
 				<button
 					type="submit"
 					class="cursor-pointer inline-flex items-center justify-center bg-white px-15 py-10 text-sm md:text-lg font-bold uppercase tracking-wide text-sage transition hover:bg-shell disabled:opacity-60"
