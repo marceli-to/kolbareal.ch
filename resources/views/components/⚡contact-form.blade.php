@@ -97,28 +97,28 @@ new class extends Component
 	}
 }; ?>
 
-<div class="mx-auto w-full max-w-6xl px-24 py-32 md:py-64">
+<div class="mx-auto w-full max-w-6xl px-24 py-32 md:py-64 text-white">
 	@if ($submitted)
 		<div
-			class="flex flex-col gap-24 text-white"
+			class="flex flex-col gap-24"
 			role="status"
 			aria-live="polite">
-			<h2 class="text-xl md:text-2xl font-bold uppercase tracking-tight text-white">
+			<h2 class="text-xl md:text-2xl font-bold uppercase tracking-tight">
 				Wir haben Ihre Anmeldung erhalten
 			</h2>
-			<p class="text-pretty text-sm text-white">
+			<p class="text-pretty text-sm">
 				Vielen Dank für Ihr Interesse. Wir melden uns, sobald die Vermietung startet.
 			</p>
 		</div>
 	@else
-		<h2 class="text-xl md:text-2xl font-bold uppercase tracking-tight text-white">
+		<h2 class="text-xl md:text-2xl font-bold uppercase tracking-tight">
       Kontaktformular
     </h2>
 
 		<form wire:submit="submit" class="mt-16 flex flex-col gap-24">
 			{{-- Apartment size selection --}}
 			<fieldset>
-				<legend class="mb-16 text-lg md:text-xl font-bold text-white">
+				<legend class="mb-16 text-lg md:text-xl font-bold">
           Wohnungsgrösse auswählen
         </legend>
 				<div
@@ -126,7 +126,7 @@ new class extends Component
 					x-on:change="$el.querySelectorAll('input').forEach((c) => c.classList.remove('outline-2', '-outline-offset-2', 'outline-red-400'))"
 					class="grid grid-cols-1 gap-x-40 gap-y-12 sm:grid-flow-col sm:grid-cols-2 sm:grid-rows-3 max-w-2xl">
 					@foreach ($sizes as $size)
-						<label for="size-{{ \Illuminate\Support\Str::slug($size) }}" class="flex cursor-pointer items-center gap-12 text-xs md:text-sm text-white">
+						<label for="size-{{ \Illuminate\Support\Str::slug($size) }}" class="flex cursor-pointer items-center gap-12 text-xs md:text-sm">
 							<span class="group inline-grid size-20 grid-cols-1 sm:size-16">
 								<input
 									id="size-{{ \Illuminate\Support\Str::slug($size) }}"
@@ -166,7 +166,7 @@ new class extends Component
 			</div>
 
 			{{-- Privacy consent --}}
-			<label for="privacy" x-data class="flex cursor-pointer items-start gap-12 text-xs md:text-sm text-white">
+			<label for="privacy" x-data class="flex cursor-pointer items-start gap-12 text-xs md:text-sm">
 				<span class="flex h-lh items-center text-sm">
 					<span class="group inline-grid size-20 grid-cols-1 sm:size-16">
 						<input
@@ -192,7 +192,7 @@ new class extends Component
 
 			{{-- Cloudflare Turnstile runs invisibly (rendered after the form); only its error surfaces here --}}
 			@error('turnstileToken')
-				<p class="text-xs md:text-sm text-white underline">{{ $message }}</p>
+				<p class="text-xs md:text-sm underline">{{ $message }}</p>
 			@enderror
 
 			<div>
@@ -200,8 +200,7 @@ new class extends Component
 					type="submit"
 					class="cursor-pointer inline-flex items-center justify-center bg-white px-15 py-10 text-sm md:text-lg font-bold uppercase tracking-wide text-sage transition hover:bg-shell disabled:opacity-60"
 					wire:loading.attr="disabled"
-					wire:target="submit"
-				>
+					wire:target="submit">
 					<span wire:loading.remove wire:target="submit">Absenden</span>
 					<span wire:loading wire:target="submit">Wird gesendet…</span>
 				</button>
