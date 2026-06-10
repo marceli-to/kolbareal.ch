@@ -1,5 +1,5 @@
 <header class="relative">
-	<div class="aspect-[16/11] w-full overflow-hidden sm:aspect-[16/8] lg:aspect-[16/7]">
+	<div class="aspect-square sm:aspect-[16/10] w-full overflow-hidden ">
 		<picture>
 			<source srcset="/images/header-visual.avif" type="image/avif">
 			<source srcset="/images/header-visual.webp" type="image/webp">
