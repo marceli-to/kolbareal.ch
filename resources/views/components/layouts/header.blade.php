@@ -1,5 +1,5 @@
 <header class="relative">
-	<div class="aspect-square sm:aspect-[16/10] w-full overflow-hidden ">
+	<div class="aspect-square sm:aspect-[16/10] md:aspect-[16/9] xl:aspect-[16/8] w-full overflow-hidden ">
 		<picture>
 			<source srcset="/images/header-visual.avif" type="image/avif">
 			<source srcset="/images/header-visual.webp" type="image/webp">
@@ -7,7 +7,7 @@
 				src="/images/header-visual.jpg"
 				alt="Familie geniesst das Wohnen im Kolbareal Affoltern"
 				width="2842"
-				height="1751"
+				height="1436"
 				class="size-full object-cover"
 				fetchpriority="high"
 			>
