@@ -15,7 +15,7 @@
 			<div class="space-y-20 text-sm md:text-lg text-pretty max-w-prose">
 				<p>
 					An der Alte Mühlackerstrasse in Zürich-Affoltern entstehen 29 moderne und
-					grosszügig konzipierte Mietwohnungen mit 1.5 bis 5.5 Zimmern. Die hochwertigen
+					grosszügig konzipierte Mietwohnungen mit 1 bis 5.5 Zimmern. Die hochwertigen
 					Wohnungen bieten zeitgemässen Wohnkomfort und attraktive Grundrisse für Singles,
 					Paare und Familien.
 				</p>

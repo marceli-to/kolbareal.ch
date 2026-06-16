@@ -1,6 +1,6 @@
 @php
 	$metaTitle = $title ?? 'Kolbareal Affoltern – Mein Zuhause';
-	$metaDescription = $description ?? 'Erstbezug ab Frühling 2027: 29 moderne und grosszügige Mietwohnungen mit 1.5 bis 5.5 Zimmern an der Alten Mühlackerstrasse in Zürich-Affoltern.';
+	$metaDescription = $description ?? 'Erstbezug ab Frühling 2027: 29 moderne und grosszügige Mietwohnungen mit 1 bis 5.5 Zimmern an der Alten Mühlackerstrasse in Zürich-Affoltern.';
 	$metaImage = url('/images/header-visual.jpg');
 @endphp
 <!DOCTYPE html>

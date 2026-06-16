@@ -28,7 +28,7 @@ new class extends Component
 	public bool $submitted = false;
 
 	/** Apartment sizes offered, in display order. */
-	public array $sizes = ['1.5', '2.5', '3.5', '4.5', '5.5'];
+	public array $sizes = ['1', '2.5', '3.5', '4.5', '5.5'];
 
 	/** @return array<string,mixed> */
 	protected function rules(): array
