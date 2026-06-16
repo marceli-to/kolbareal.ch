@@ -28,12 +28,12 @@
 		<nav class="text-xs md:text-sm md:text-right md:col-span-3 md:self-end">
 			<ul>
 				<li>
-					<a href="#" class="hover:underline decoration-1 underline-offset-2">
+					<a href="{{ route('imprint') }}" class="hover:underline decoration-1 underline-offset-2">
 						Impressum
 					</a>
 				</li>
 				<li>
-					<a href="#" class="hover:underline decoration-1 underline-offset-2">
+					<a href="{{ route('privacy') }}" class="hover:underline decoration-1 underline-offset-2">
 						Datenschutz
 					</a>
 				</li>
