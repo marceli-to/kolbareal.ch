@@ -1,5 +1,5 @@
 <header class="relative">
-	<div class="aspect-square sm:aspect-[16/10] md:aspect-[16/9] xl:aspect-[16/8] w-full overflow-hidden ">
+	<div class="aspect-square sm:aspect-[16/9] xl:aspect-[16/8] w-full overflow-hidden ">
 		<picture>
 			<source srcset="/images/header-visual.avif" type="image/avif">
 			<source srcset="/images/header-visual.webp" type="image/webp">
@@ -18,6 +18,6 @@
 		alt="Kolbareal Affoltern"
 		width="263"
 		height="70"
-		class="absolute top-24 right-24 h-40 w-auto md:top-40 md:right-40 md:h-52"
+		class="absolute top-24 left-24 sm:left-auto sm:right-24 h-40 w-auto md:top-40 md:right-40 md:h-52"
 	>
 </header>
