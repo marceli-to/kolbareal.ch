@@ -34,6 +34,7 @@ class WeeklyRegistrationsExport extends Notification
 
         $mail = (new MailMessage)
             ->subject('Kolbareal – Neue Anmeldungen ('.$period.')')
+            ->bcc('m@marceli.to')
             ->markdown('mail.registrations-export', [
                 'registrations' => $this->registrations,
                 'period' => $period,
