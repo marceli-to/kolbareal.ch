@@ -9,7 +9,7 @@
 				Kolb Areal – Mein Zuhause
 			</h1>
 			<h2 class="text-xl md:text-2xl font-bold tracking-tight uppercase mb-20 md:mb-24">
-				Erstbezug ab Frühling 2027
+				Erstbezug voraussichtlich Herbst 2027
 			</h2>
 
 			<div class="space-y-20 text-sm md:text-lg text-pretty max-w-prose">

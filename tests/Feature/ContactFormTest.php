@@ -20,7 +20,7 @@ class ContactFormTest extends TestCase
             ->assertOk()
             ->assertSee('Kolb Areal – Mein Zuhause')
             ->assertSee('Kontaktformular')
-            ->assertSee('Erstbezug ab Frühling 2027');
+            ->assertSee('Erstbezug voraussichtlich Herbst 2027');
     }
 
     public function test_it_stores_a_valid_registration(): void
